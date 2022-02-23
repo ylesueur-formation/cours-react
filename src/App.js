@@ -1,5 +1,5 @@
-import { Timer, TimerState } from './components/etats/Timer';
-import { Personnage, PersonnageAvecProps, Personne } from './components/Personne';
+import {  TimerHook } from './components/02-etats/Timer';
+import { Personnage, PersonnageAvecProps, Personne } from './components/01-composant/Personne';
 
 export default function App() {
   return (
@@ -16,8 +16,9 @@ export default function App() {
           <Personne name="Ella" salut="tata"/>
           <Personnage />
           <PersonnageAvecProps name="toto" />
-          <Timer />
-          <TimerState />
+          {/* <Timer />
+          <TimerState /> */}
+          <TimerHook />
       </div>
   )
 }

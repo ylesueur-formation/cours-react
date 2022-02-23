@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 
 export class Timer extends Component {
     // super(): (Heritage) Appelle le constructeur de la classe mère.
@@ -52,4 +52,22 @@ export class TimerState extends React.Component {
             </div>
         );
     }
+}
+
+
+export function TimerHook() {
+    // La fonction useState nous renvoie un tableau avec la valeur
+    // d'initialiser (date du jour) et une fonction qui permet de mettre a jour cette valeur
+    const dateDuJour = new Date();
+    const state = useState(dateDuJour);
+    const date = state[0];
+    const setDate = state[1];
+
+    setInterval(() => {
+        setDate(new Date());
+    }, 1000)
+
+    return (
+        <p>Date: {date.toLocaleTimeString()}</p>
+    )
 }
