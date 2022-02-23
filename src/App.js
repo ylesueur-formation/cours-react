@@ -1,4 +1,5 @@
-import { Personne } from './components/Personne';
+import { Timer } from './components/etats/Timer';
+import { Personnage, PersonnageAvecProps, Personne } from './components/Personne';
 
 export default function App() {
   return (
@@ -13,6 +14,9 @@ export default function App() {
           <Personne name="Jean" salut="toto"/>
           <br/>
           <Personne name="Ella" salut="tata"/>
+          <Personnage />
+          <PersonnageAvecProps name="toto" />
+          <Timer />
       </div>
   )
 }
