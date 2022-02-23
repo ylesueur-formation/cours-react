@@ -1,4 +1,4 @@
-import { Timer } from './components/etats/Timer';
+import { Timer, TimerState } from './components/etats/Timer';
 import { Personnage, PersonnageAvecProps, Personne } from './components/Personne';
 
 export default function App() {
@@ -17,6 +17,7 @@ export default function App() {
           <Personnage />
           <PersonnageAvecProps name="toto" />
           <Timer />
+          <TimerState />
       </div>
   )
 }

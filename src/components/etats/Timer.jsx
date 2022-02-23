@@ -17,9 +17,38 @@ export class Timer extends Component {
         return (
             <div>
                 {/* Les accolades ne savent pas affichées des objets
-                    JSON.stringify(monObjet)
-                 */}
+                    Solution: JSON.stringify(monObjet)
+                */}
                 <p>{this.date.toLocaleTimeString()}</p>
+            </div>
+        );
+    }
+}
+
+
+export class TimerState extends React.Component {
+      constructor(props) {
+        super(props);
+        // Ce nom d'objet est compris par exemple
+        this.state = {
+            date: new Date()
+        }
+        this.timerId = setInterval(this.mettreAJourDate, 1000);
+    }
+
+    mettreAJourDate = () => {
+        // this.state.date = new Date(); <- on ne fait jamais ca
+        this.setState({
+            date: new Date()
+        })
+        console.log(this.date);
+    }
+
+    render() {
+        return (
+            <div>
+                <h2>Avec State</h2>
+                <p>{this.state.date.toLocaleTimeString()}</p>
             </div>
         );
     }
