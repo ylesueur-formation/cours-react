@@ -1,6 +1,6 @@
 import {  TimerHook } from './components/02-etats/Timer';
 import { Personnage, PersonnageAvecProps, Personne } from './components/01-composant/Personne';
-import { Event } from './components/03-events/Event';
+import { Event, EventClasse } from './components/03-events/Event';
 
 export default function App() {
   return (
@@ -19,7 +19,10 @@ export default function App() {
           <PersonnageAvecProps name="toto" />
           {/* <Timer />
           <TimerState /> */}
+          <h2>Timer avec Hook</h2>
           <TimerHook />
+          <EventClasse />
+          <h2>Event avec Hook</h2>
           <Event/>
       </div>
   )

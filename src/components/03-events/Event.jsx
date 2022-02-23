@@ -34,3 +34,27 @@ export function Event() {
         </React.Fragment>
     );
 }
+
+export class EventClasse extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            prenom: 'Pierre'
+        }
+    }
+
+    changerPrenom = () => {
+        this.setState({
+            prenom: "Marie" 
+        })
+    }
+    
+    render() {
+        return (
+            <>
+                <h2>Prenom : {this.state.prenom}</h2>
+                <button onClick={this.changerPrenom}>Changer de prenom</button>
+            </>
+        );
+    }
+}
