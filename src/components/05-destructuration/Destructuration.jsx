@@ -32,7 +32,10 @@ export function Desctructuration(props) {
     // tableau = [prenoms[0], prenoms[1], prenoms[2], prenoms[3]]
     tableau = [...prenoms];
     tableau = Array.from(tableau);
+    console.log(tableau)
+
     // console.log(prenoms[0], prenoms[1], prenoms[2], prenoms[3])
+    console.log(prenoms);
     console.log(...prenoms);
 
     let voiture = {

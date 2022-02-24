@@ -22,12 +22,12 @@ export default function App() {
           {/* <Timer />
           <TimerState /> */}
           {/* <h2>Timer avec Hook</h2>
-          <TimerHook />
+          <TimerHook /> */}
           <EventClasse />
-          <h2>Event avec Hook</h2>
-          <Event/> */}
-          <Reference/>
-          <Desctructuration/>
+          {/* <h2>Event avec Hook</h2> */}
+          {/* <Event/> */}
+          {/* <Reference/>
+          <Desctructuration/> */}
       </div>
   )
 }

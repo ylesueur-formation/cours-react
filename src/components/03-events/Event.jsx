@@ -48,12 +48,31 @@ export class EventClasse extends React.Component {
             prenom: "Marie" 
         })
     }
+
+    onChangeHandler = (event) => {
+        // console.log(event); // <- C'est un objet contenant toutes les informations relatif a l'evenement
+        // console.log(event.target); // <- C'est l'element HTML qui a déclencher l'événement
+        console.log(event.target.value); // <- Ca depend de l'element HTML, Les boutons par exemple, non pas de value.
+        let saisitUtilisateur = event.target.value;
+        let prenom = saisitUtilisateur;
+        if (saisitUtilisateur.length < 2) {
+            console.log(event.target.style);
+            event.target.style.borderColor = "red";
+        } else {
+            event.target.style.borderColor = "green";
+        }
+        this.setState({
+            prenom: prenom
+            // prenom,
+        });
+    }
     
     render() {
         return (
             <>
                 <h2>Prenom : {this.state.prenom}</h2>
                 <button onClick={this.changerPrenom}>Changer de prenom</button>
+                <input type="text" onChange={this.onChangeHandler} placeholder="Saisir du texte" />
             </>
         );
     }
