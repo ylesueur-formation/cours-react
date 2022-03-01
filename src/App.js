@@ -1,9 +1,12 @@
 // import {  TimerHook } from './components/02-etats/Timer';
 // import { Personnage, PersonnageAvecProps, Personne } from './components/01-composant/Personne';
-import { Event, EventClasse } from './components/03-events/Event';
+// import { Event, EventClasse } from './components/03-events/Event';
+// import { Promesse } from './components/07-promesse/Promesse';
 // import { Reference } from './components/04-references/Ref';
 // import { Desctructuration } from './components/05-destructuration/Destructuration';
 // import { Liste } from './components/06-liste/Liste';
+
+import { AxiosAPI } from "./components/08-axios/AxiosAPI";
 
 export default function App() {
   return (
@@ -24,12 +27,14 @@ export default function App() {
           <TimerState /> */}
           {/* <h2>Timer avec Hook</h2>
           <TimerHook /> */}
-          <EventClasse />
+          {/* <EventClasse /> */}
           {/* <h2>Event avec Hook</h2> */}
           {/* <Event/> */}
           {/* <Reference/>
           <Desctructuration/> */}
           {/* <Liste /> */}
+          {/* <Promesse/> */}
+          <AxiosAPI />
       </div>
   )
 }
