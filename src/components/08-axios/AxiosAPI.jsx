@@ -11,6 +11,10 @@ export class AxiosAPI extends React.Component {
 
     onGetAxiosHandler = () => {
 
+        // 1- axios(url) : renvoie une promesse avec les données.
+        // 2- pour acceder à ces données; on doit utiliser la methode then.
+        //       La methode prend en parametre la fonction de success: 
+        //       qu'est ce que vous voulez faire avec le resultat ?
         axios('https://jsonplaceholder.typicode.com/users').then(
             (reponse) => {
                 console.log(reponse);
@@ -19,6 +23,44 @@ export class AxiosAPI extends React.Component {
                 let utilisateurs = reponse.data; // <- tableau d'utilisateurs
                 this.setState({utilisateur: utilisateurs[0] });
             }
+        );
+    }
+
+    onPostAxiosHandler = () => {
+        // Le POST pour les requetes HTTP permet de créer un élément
+
+        // L'objet data dépend de votre serveur ou de l'API que vous utilisez.
+        let data = {
+            userId: 99,
+            title: "Super Article !",
+            body: "Lorem Ipsum"
+        }
+        axios.post("https://jsonplaceholder.typicode.com/posts", data).then(
+            reponse => console.log(reponse.statusText, reponse.data)
+        );
+    }
+
+
+    onPatchAxiosHandler = () => {
+        // Le PATCH pour les requetes HTTP permet de mettre à jour partiellement un objet.
+        // axios("https://jsonplaceholder.typicode.com/posts/99").then(r=>console.log(r.data));
+
+        // L'objet data dépend de votre serveur ou de l'API que vous utilisez.
+        let data = {
+            title: "Super Article !",
+        }
+        axios.patch("https://jsonplaceholder.typicode.com/posts/99", data).then(
+            reponse => console.log(reponse.statusText, reponse.data)
+        );
+    }
+
+    onDeleteAxiosHandler = () => {
+        // Le PATCH pour les requetes HTTP permet de mettre à jour partiellement un objet.
+        // axios("https://jsonplaceholder.typicode.com/posts/99").then(r=>console.log(r.data));
+
+
+        axios.delete("https://jsonplaceholder.typicode.com/posts/99").then(
+            reponse => console.log(reponse.statusText, reponse.data)
         );
     }
 
@@ -43,10 +85,23 @@ export class AxiosAPI extends React.Component {
     render() {
         return (
         <>
-            <button onClick={this.onGetAxiosHandler} class="btn btn-dark m-3">
-                Axios GET
+            {/* CRUD */}
+            <button onClick={this.onGetAxiosHandler} class="btn btn-success m-3">
+                Axios GET (Read)
             </button>
             { this.renderUtilisateur() }
+
+            <button onClick={this.onPostAxiosHandler} class="btn btn-warning m-3">
+                Axios POST (Create)
+            </button>
+
+            <button onClick={this.onPatchAxiosHandler} class="btn btn-info m-3">
+                Axios PATCH (Update)
+            </button>
+
+            <button onClick={this.onDeleteAxiosHandler} class="btn btn-danger m-3">
+                Axios DELETE (Delete)
+            </button>
         </>
         )
     }
