@@ -25,13 +25,16 @@ export class AxiosAPI extends React.Component {
     renderUtilisateur = () => {
         if (this.state.utilisateur !== null) {
             return (
-                <>
-                    <h2>{this.state.utilisateur.name}</h2>
-                    <p>
-                        {this.state.utilisateur.email} -
-                        <a href={this.state.utilisateur.website}>Visiter mon site</a>
-                    </p>
-                </>
+                <div class="card">
+                    <div class="card-header">
+                        Personne
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{this.state.utilisateur.name}</h5>
+                        <p class="card-text">{this.state.utilisateur.email}</p>
+                        <a href={this.state.utilisateur.website} class="btn btn-primary">Visiter mon site</a>
+                    </div>
+                </div>
             )
         }
         return null;
@@ -40,7 +43,7 @@ export class AxiosAPI extends React.Component {
     render() {
         return (
         <>
-            <button onClick={this.onGetAxiosHandler}>
+            <button onClick={this.onGetAxiosHandler} class="btn btn-dark m-3">
                 Axios GET
             </button>
             { this.renderUtilisateur() }
