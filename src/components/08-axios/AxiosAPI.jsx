@@ -7,6 +7,7 @@ export class AxiosAPI extends React.Component {
         this.state = {
             utilisateur: null
         }
+        // this.onDeleteAxiosHandler = this.onDeleteAxiosHandler.bind(this);
     }
 
     onGetAxiosHandler = () => {
@@ -86,20 +87,20 @@ export class AxiosAPI extends React.Component {
         return (
         <>
             {/* CRUD */}
-            <button onClick={this.onGetAxiosHandler} class="btn btn-success m-3">
+            <button onClick={this.onGetAxiosHandler} className="btn btn-success m-3">
                 Axios GET (Read)
             </button>
             { this.renderUtilisateur() }
 
-            <button onClick={this.onPostAxiosHandler} class="btn btn-warning m-3">
+            <button onClick={this.onPostAxiosHandler} className="1btn btn-warning m-3">
                 Axios POST (Create)
             </button>
 
-            <button onClick={this.onPatchAxiosHandler} class="btn btn-info m-3">
+            <button onClick={this.onPatchAxiosHandler} className="btn btn-info m-3">
                 Axios PATCH (Update)
             </button>
 
-            <button onClick={this.onDeleteAxiosHandler} class="btn btn-danger m-3">
+            <button onClick={this.onDeleteAxiosHandler} className="btn btn-danger m-3">
                 Axios DELETE (Delete)
             </button>
         </>
