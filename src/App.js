@@ -7,6 +7,7 @@
 // import { Liste } from './components/06-liste/Liste';
 
 import { AxiosAPI } from "./components/08-axios/AxiosAPI";
+import { CycleDeVie } from "./components/09-cycle-de-vie/CycleDeVie";
 
 export default function App() {
   return (
@@ -34,7 +35,8 @@ export default function App() {
           <Desctructuration/> */}
           {/* <Liste /> */}
           {/* <Promesse/> */}
-          <AxiosAPI />
+          {/* <AxiosAPI /> */}
+          <CycleDeVie/>
       </div>
   )
 }
