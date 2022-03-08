@@ -24,7 +24,6 @@ export class Liste extends React.Component {
                         this.creatationLiElement()
                     }
                 </ul>
-                <MonMonComposantPropsComposantProps message="Salut !"/>
             </div>
         );
     }
